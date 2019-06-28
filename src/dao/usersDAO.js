@@ -61,7 +61,7 @@ export default class UsersDAO {
       // TODO Ticket: Durable Writes
       // Use a more durable Write Concern for this operation.
       await users.insertOne({ "name": userInfo.name, "email": userInfo.email, "password": userInfo.password },
-      { w: "majority" },)
+      { w: 1 },)
       
       return { success: true }
     } catch (e) {
@@ -176,8 +176,8 @@ export default class UsersDAO {
       // TODO Ticket: User Preferences
       // Use the data in "preferences" to update the user's preferences.
       const updateResponse = await users.updateOne(
-        { someField: someValue },
-        { $set: { someOtherField: someOtherValue } },
+        { email: email },
+        { $set: { preferences: preferences} },
       )
 
       if (updateResponse.matchedCount === 0) {
