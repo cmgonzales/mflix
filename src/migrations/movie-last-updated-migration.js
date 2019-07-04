@@ -12,7 +12,7 @@ const MongoError = require("mongodb").MongoError
  * Refer to http://mongodb.github.io/node-mongodb-native/3.1/tutorials/crud/#bulkwrite
  */
 
-// This leading semicolon (;) is to make this Immediately Invoked Function Expression (IIFE).
+// This leading semicolon (;) is to make this //Immediately Invoked Function Expression (IIFE).
 // To read more about this type of expression, refer to https://developer.mozilla.org/en-US/docs/Glossary/IIFE
 ;(async () => {
   try {
